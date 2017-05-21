@@ -104,14 +104,14 @@ def readSBMLnetwork(filename, name) :
 
             listOfReactants = get_listOfReactants(e)
             if listOfReactants == None :
-                print("\n Warning:",reactionId, "listOfReactants=None")
+                print(("\n Warning:",reactionId, "listOfReactants=None"))
             else:
                 for r in listOfReactants:
                     lpfacts.add(Term('reactant', ["\""+r.attrib.get("species")+"\"", "\""+reactionId+"\""])) #,"\""+name+"\""
 
             listOfProducts = get_listOfProducts(e)
             if listOfProducts == None:
-                print("\n Warning:",reactionId, "listOfProducts=None")
+                print(("\n Warning:",reactionId, "listOfProducts=None"))
             else:
                 for p in listOfProducts:
                     lpfacts.add(Term('product', ["\""+p.attrib.get("species")+"\"", "\""+reactionId+"\""])) #,"\""+name+"\""
